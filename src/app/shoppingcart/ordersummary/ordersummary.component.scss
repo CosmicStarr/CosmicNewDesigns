@@ -1,0 +1,83 @@
+
+
+@media screen and (max-width:48em) {
+    .orderSum-container{
+        padding-left: 0rem !important;
+        padding-right: 0rem !important;
+    }
+}
+@media screen and (max-width:52em) {
+    .orderSum-container{
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+
+.orderSum-container{
+    padding-right: 2rem;
+}
+.actual-order-container{
+    border: 1px solid #a2b400;
+    padding: 2rem;
+    // width: 35rem;
+    line-height: 2rem;
+}
+.actual-order-container h1{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+.order-button button{
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    background-color: #a2b400;
+    border: none;
+    color: aliceblue;
+    font-weight: 500;
+}
+.order-button{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.order-button p{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.order-button a{
+    text-decoration: none;
+}
+.order-summary-info{
+    
+    display: flex;
+    justify-content: space-between;
+}
+.left-info p{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.right-info{
+    text-align: end;
+    
+}
+.right-info p{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.total-tax{
+    border-top: 1px solid #a2b400;
+}
+.left-info h3{
+    margin-top: 1rem;
+    font-size: 1.8rem;
+}
+.est-tax{
+    border-bottom: 1px solid #a2b400;
+}
+.total-order{
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    
+}

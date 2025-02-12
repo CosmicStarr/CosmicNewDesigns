@@ -1,0 +1,20 @@
+
+.brand-title{
+    color: #a2b400;
+    letter-spacing: 0.6px;
+    font-size: 3.4rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2.4rem;
+}
+.brand-logos{
+    display: flex;
+    justify-content: space-around;
+}
+.brand-logos img{
+    height: 17rem;
+    // filter: grayscale(100%);
+}
+.section-features{
+    padding: 4.8rem 0 3.4rem 0;
+}

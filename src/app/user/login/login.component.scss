@@ -1,0 +1,164 @@
+
+@media screen and (max-width:97em) {
+    .login-form{
+        width: 24% !important;
+        padding: 5rem !important
+    }
+}
+@media screen and (max-width:85em) {
+    .login-form{
+        width: 27% !important;
+        padding: 4rem !important
+    }
+}
+@media  screen and (max-width:75em) {
+    .login-form{
+        width: 28% !important;
+        padding: 4rem !important
+    }
+}
+@media screen and  (max-width:62em) {
+    .login-form{
+        width: 30% !important;
+        padding: 4rem !important
+    }
+}
+@media screen and  (max-width:50em) {
+    .login-form{
+        width: 35% !important;
+        padding: 4rem !important
+    }
+}
+@media screen and  (max-width:44em) {
+    .btn-form{
+        padding: 1.2rem !important;
+    }
+    .login-form{
+        width: 39% !important;
+        padding: 4rem !important
+    }
+}
+@media screen and  (max-width:38em) {
+    .login-form{
+        width: 48% !important;
+        padding: 4rem !important
+    }
+}
+@media screen and (max-width:32em) {
+    .login-form{
+        width: 52% !important;
+        padding: 4rem !important
+    }
+}
+@media screen and (max-width:28em) {
+    .login-form{
+        width: 80% !important;
+        padding: 4rem !important
+    }
+}
+@media (max-width:25em) {
+    .btn-form{
+        padding: 1.2rem !important;
+    }
+    .login-form{
+        width: 92% !important;
+        padding: 4rem !important
+    }
+}
+
+
+
+.login-form{
+    margin: 1rem;
+    width: 20%;
+    padding: 4rem;
+    background-color: #f1ed1486;
+    border-radius: 8%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.login-section{
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+}
+.img-section{
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url('../../../assets/Images/physed-keto-diet-superJumbo.jpg');
+}
+.login-container{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.actual-login-form{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    line-height: 2;
+}
+.actual-login-form p {
+    text-align: center;
+}
+.sun{
+    color: #4169e1;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.actual-login-form a {
+    font-weight: 600;
+}
+
+.actual-login-form label{
+    // display: block;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+.login-heading{
+    margin-bottom: 1.4rem;
+    text-align: center;
+    display: block;
+    font-size: 4rem;
+    color: #a2b400;
+    text-shadow: .1rem .1rem .9rem black;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    line-height: 4rem;
+}
+.actual-login-form input{
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.8rem;
+    font-family: inherit;
+    color: inherit;
+    border: none;
+    background-color: #fae5d3;
+    border-radius: 9px;
+    //horizontal,vertical,blur
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    margin-top: 1rem;
+}
+
+.btn-form{
+    margin-top: 2rem;
+    width: 100%;
+    background-color: #a2b400;
+    align-self: end;
+    padding: 1.2rem;
+    border-radius: 100px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #fff;
+}
+.btn-form:hover{
+    background-color: #4169e1;
+    color: #45260a;
+}

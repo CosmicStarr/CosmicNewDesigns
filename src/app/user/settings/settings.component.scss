@@ -1,0 +1,71 @@
+@media screen and (max-width:20em) {
+    .userSetting-container{
+        margin-top: 5rem;
+        width: 100% !important;
+    }
+}
+@media screen and (max-width:24em) {
+    .userSetting-container{
+        margin-top: 5rem;
+        width: 100% !important;
+    }
+}
+@media screen and (max-width:30em) {
+    .userSetting-container{
+        margin-top: 5rem;
+        width: 100% !important;
+    }
+}
+@media screen and (max-width:38em) {
+    .userSetting-container{
+        margin-top: 5rem;
+        width: 100% !important;
+    }
+}
+.margin-top{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.heading-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.userSetting-container{
+    margin-top: 5rem;
+    width: 65%;
+}
+.userSetting-options{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    border: 1px solid #0000001a;
+}
+.options{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    border-top: 1px solid #0000001a;
+}
+.label-info span{
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.label-info p{
+    margin-top: 1rem;
+    font-size: 1.6rem;
+}
+.btn-edit{
+    height: 3rem;
+    font-size: 1.6rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+}
+.marg{
+    margin-top: 5rem;
+}

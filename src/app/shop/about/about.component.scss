@@ -1,0 +1,51 @@
+
+@media screen and (max-width:40em) {
+    .left-side{
+        display: flex !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    .left-content{
+        margin: 0rem !important;
+    }
+}
+.about-container{
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    background-image: linear-gradient(to right bottom, rgba(255, 255, 0, 0.30), rgba(162, 180, 0, 0.30)), url('../../../assets/Images/unsplash.jpg');
+}
+.inner-about-container{
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.left-side{
+    padding: 3rem;
+    width: 65%;
+    text-align: center;
+}
+
+.left-content{
+    margin: 8rem;
+}
+
+.left-content h1{
+    margin-bottom: 3rem;
+    font-size: 5rem;
+    text-transform: uppercase;
+}
+
+.left-content span{
+    margin-bottom: 3rem;
+    display: inline-block;
+    font-size: 5rem;
+    text-transform: uppercase;
+}
+
+.left-content p{
+    font-size:3rem;
+}
+

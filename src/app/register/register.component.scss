@@ -1,0 +1,87 @@
+.section-form{
+    padding: 9.6rem 0 12.8rem;
+}
+.form{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: #a2b400;
+    box-shadow:0 2.4rem 4.8rem rgba(0,0,0, 0.75);
+    border-radius: 12px;
+    overflow: hidden;
+    background-image: linear-gradient(to right bottom, yellow, #a2b400);
+}
+
+.form-heading{
+    color: #45260a;
+    font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 600;
+    margin-bottom: 3.8rem;
+}
+.form-text-box{
+    padding: 3rem 6.0rem 6.0rem 6.0rem;
+    color: #45260a;
+}
+.form-text{
+    font-size: 2rem;
+    line-height: 1.8;
+    margin-bottom: 4.8rem;
+}
+.form-text span{
+    color:#a2b400;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+.form-img-box{
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(to right bottom, rgba(255, 255, 0, 0.30), rgba(162, 180, 0, 0.30)), url('../../assets/Images/2000-Calorie-Keto-Diet.jpg');
+}
+.actual-form{
+    //Use align-self to move grid items!
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3.2rem;
+    row-gap: 2.4rem;
+}
+.actual-form label{
+    display: block;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+}
+.actual-form input,
+.actual-form select{
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.8rem;
+    font-family: inherit;
+    color: inherit;
+    border: none;
+    background-color: #fae5d3;
+    border-radius: 9px;
+    //horizontal,vertical,blur
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+.actual-form input::placeholder{
+    color: #aaa;
+}
+.form *:focus{
+    outline: none;
+    box-shadow: 0 0 0 0.8rem rgba(179, 101, 0, 0.637) ;
+    // outline: 4px dotted #eea564;
+    // outline-offset: 8px;
+}
+.btn-form{
+    background-color: #45260a;
+    align-self: end;
+    padding: 1.2rem;
+    border-radius: 100px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #fff;
+}
+.btn-form:hover{
+    background-color:#a2b400;
+    color: #45260a;
+}

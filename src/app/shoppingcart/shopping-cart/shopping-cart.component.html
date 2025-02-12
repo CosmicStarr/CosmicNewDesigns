@@ -1,0 +1,57 @@
+<app-header></app-header>
+<section class="shopping-cart container2">
+    <div class="shop-title-container">
+        <h1 class="shop-title">Shopping Cart</h1>
+        <a routerLink="/shop/products"> &larr; back</a>
+    </div>
+    <div *ngIf="(ShoppingCart$|async) === null" class="pt-5 mt-5" class="container">
+        <h1 class="no-items">You dont have any items in your Shopping Cart!</h1>
+    </div> 
+    <div class="shopand-ordersummary-container grid5 grid-col-2">
+            <div class="shoppingCart-container" *ngIf="(ShoppingCart$|async) as Cart">
+                <div class="scrolls">
+                        <div class="bottom-container grid4 grid-col-4-1" *ngFor="let item of Cart.shoppingCartItems">
+                            <div class="img-container" role="img">
+                                <p class="pName">{{item.itemName}}</p>           
+                                <img class="actual-img" src="{{item.photoUrl}}" alt="{{item.itemName}}">           
+                            </div>
+                            <div class="product-details"> 
+                                <p class="pcat">Category</p> 
+                                <span class="CatTitle" 
+                                [ngClass]="{'colorBlue':item.category == 'Keto',
+                                            'coloryellowish':item.category =='Fried Meals',
+                                            'orangeish':item.category == 'Pizza & Pasta',
+                                            'greenish':item.category == 'Nutritious',
+                                            'goldish':item.category == 'Breakfast'}">{{item.category}}</span> 
+                                <h4>Description:</h4>
+                                <p class="pdetails">{{item.description}}</p>
+                            </div>
+                            <div class="amount">
+                                <p class="quan">Quantity</p>
+                                <div class="i-container">
+                                    <button><i (click)="increment(item)" class="fa fa-plus"></i></button>
+                                    <p class="amountN">{{item.amount}}</p>
+                                    <button><i (click)="decrement(item)" class="fa fa-minus"></i></button>
+                                    <br>
+                                    <button><i (click)="removeItems(item)" class="fa fa-trash"></i></button>
+                                </div>
+                            </div>
+                            <div class="price">
+                               <p class="quan">Price</p>
+                               <div class="pnum-container">
+                                    <p class="pnum">{{item.price |currency}}</p>
+                               </div>
+                            </div>
+                        </div>
+                        <div class="item-container" >
+                            <p class="amount-of-items">Items: {{Cart.shoppingCartItems.length}}</p>
+                        </div> 
+                </div>
+            </div>
+            <div class="orderSummary-container" *ngIf="(ShoppingCart$|async) !== null">
+                <app-ordersummary></app-ordersummary>
+            </div>
+    
+    </div>
+</section>
+<app-footer></app-footer>

@@ -1,0 +1,47 @@
+<ng-container *ngIf="order.length != 0">
+    <section class="order-card-container">
+        <div class="left-order-card">
+            <div class="labels-p">
+                <label class="order-info">Order Placed</label>
+                <p class="order-info"></p>
+            </div>
+            <div class="labels-p">
+                <label class="order-info">Total</label>
+                <p class="order-info"></p>
+            </div>
+            <div class="labels-p">
+                <label class="order-info">Pick Ready for</label>
+                <p class="order-info"> </p>
+            </div>
+        </div>
+        <div class="right-order-card">
+            <div class="labels-p">
+                <label class="order-info">Order # </label>
+            </div>
+           <div class="labels-a">
+            <a class="order-info" routerLink="">Details</a>
+            |
+            <a class="order-info"routerLink="">Invoice</a>
+           </div>
+        </div>
+    </section>
+    <section class="order-card-bottom" >
+        <div class="left-bottom-card">
+            <div class="img-container" role="img" aria-label="Food on a plate">
+                    <img src="../assets/Images/imgPlaceHolder612x612.jpg" alt="" class="actual-img">
+                <div class="product-info">
+                    <span class="product-desc">Lorem ipsum dolor sit amet, consect elit. Facere, aliquid?</span><br>
+                    <button>buy it again!</button>
+                </div>
+            </div>
+        </div>
+        <div class="right-bottom-card">
+            <button class="right-bottom-button">Write a Review</button>
+            <button class="right-bottom-button">refund</button>
+            <button class="right-bottom-button">Share</button>
+        </div>
+    </section>
+</ng-container>
+
+
+

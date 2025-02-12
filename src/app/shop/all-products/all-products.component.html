@@ -1,0 +1,129 @@
+<!-- use-css-flexbox -->
+<app-header></app-header>
+<section class="all-products-container container2">
+    <div class="top-of-container">
+        <header class="left-header">
+            <h1 class="header-title">Browse Products</h1>
+            <div class="searchBox-container">
+                <input (keyup.enter)="onSearch()" #Search type="text" placeholder="Search products" [(ngModel)]="term" name="term">
+                <div class="absolute">
+                    <ul *ngIf="term" class="searchList">
+                        <li *ngFor="let item of products | filter : term">
+                           <a (click)="onSearch()">
+                                {{item.categoryDTO}} : {{item?.name}}
+                           </a>
+                       </li>
+                    </ul>
+                </div>
+                <ng-container *ngIf="Search.value">
+                    <i (click)="onReset()" class="fa fa-times-circle x"></i>
+                </ng-container>
+                    <i (click)="onSearch()" class="fa fa-search"></i>
+            </div>
+        </header>
+        <div class="right-header">
+          <a routerLink="">Find a Store &rarr;</a>
+        </div>
+    </div>
+    <div class="bottom-of-container">
+        <div class="bottom-left-side">
+            <div class="browse-by-category-container">
+                <div class="h1-container">
+                    <h1 class="cat-die-header">Category</h1>
+                </div>
+               <br>
+               <hr>
+               <ul class="cat-die-list">
+                   <li *ngFor="let item of category"
+                   [value]="item.catId"
+                   (click)="onCatSelected(item.catId)">{{item.name}}</li>
+               </ul>
+            </div>
+            <div class="browse-by-dietary">
+                <div class="h1-container">
+                    <h1 class="cat-die-header">Dietary</h1>
+                </div>
+               <br>
+               <hr>
+               <ul class="cat-die-list">
+                <li class="catbrand" *ngFor="let item of brand"
+                [value]="item.brandId"
+                (click)="onBrandSelected(item.brandId)">{{item.name}}</li>
+            </ul>
+            </div>
+        </div>
+            <!-- use-css-grid -->
+        <div class="bottom-right-side-container">
+            <div class="right-header-container">
+                <div class="products-header">
+                    <h1 class="bottom-right-heading">Products</h1>
+                    <div class="" role="cell"></div>
+                </div>
+                <div class="sort-column">
+                    <label class="sort-label">Sort</label>
+                    <select class="sort-column-select" (change)="onSortSelected($event.target.value)">
+                         <option *ngFor="let sort of sortOptions"[value]="sort.value">
+                            {{sort.name}}
+                         </option>   
+                    </select>
+                </div>
+            </div>
+            <hr>
+            <div class="bottom-right-side grid3 grid-col-4">
+                <ng-container *ngIf="products.length === 0">
+                    <span> 0 results were found from that search</span>
+                </ng-container>
+                <div class="products" *ngFor="let item of products">
+                    <a class="img-route" routerLink="/shop/details/{{item.productsId}}" routerLinkActive="active">
+                        <img src="{{item.photosDTO || '../assets/Images/imgPlaceHolder612x612.jpg'}}" alt="{{item.name}}">
+                    </a>
+                    <div class="product-info">
+                        <div class="ratingDiv">
+                            <star-rating 
+                            [value]="item?.ratings" 
+                            [totalstars]="5" 
+                            checkedcolor="gold" 
+                            uncheckedcolor="black" 
+                            size="24px" 
+                            [readonly]="false" 
+                            (rate)="onRate($event,item.productsId)"></star-rating>
+                            <ng-container *ngIf="item.ratings > 20">
+                                <span>(20+)</span> 
+                            </ng-container>
+                         
+                        </div>
+
+                        <div class="product-Cat">
+                            <span class="CatTitle" 
+                            [ngClass]="{'colorBlue':item.categoryDTO == 'Keto',
+                                        'coloryellowish':item.categoryDTO =='Fried Meals',
+                                        'orangeish':item.categoryDTO == 'Pizza & Pasta',
+                                        'greenish':item.categoryDTO == 'Nutritious',
+                                        'goldish':item.categoryDTO == 'Breakfast'}">{{item.categoryDTO}}</span> 
+                        </div>
+                        <p class="product-Title"> {{item.name}}</p>
+                        <!-- <ul class="product-ETC">
+                            <li class="ETC"><i class="fa fa-fire"></i><p><strong>650</strong> calories</p></li>
+                            <li class="ETC"><i class="fa fa-spoon"></i><p> Nurtrition Score&reg;</p></li>
+                            <li class="ETC"><i class="fa fa-star"></i> <p><strong>4.9</strong> rating <strong> (567)</strong></p> </li>
+                        </ul> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>          
+</section>
+<div class="page" *ngIf="p">
+    <pagination
+        [boundaryLinks]="true" 
+        [totalItems]="p.TotalItems"
+        [itemsPerPage]="p.ItemsPerPage"
+        [(ngModel)]="p.CurrentPage"
+        (pageChanged)="pageChanged($event)"
+        previousText="Back" 
+        nextText="Next" 
+        firstText="First" 
+        lastText="Last">
+    </pagination>
+</div>
+<app-footer></app-footer>

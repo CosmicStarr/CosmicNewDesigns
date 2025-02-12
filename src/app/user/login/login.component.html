@@ -1,0 +1,24 @@
+<div class="img-section" role="img">
+    <section class="login-section">
+        <div class="login-container">
+            <div class="login-form">
+                <form class="actual-login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <h1 class="login-heading">Welcome <br>to <br> SunStarrs</h1>
+                    <p class="sun">Enjoy the Sun</p>
+                    <div class="form-group">
+                        <!-- <label for="Email" > Email</label> -->
+                        <input formControlName="email" type="text" placeholder="Email">      
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="Password" > Password</label> -->
+                        <input formControlName="password" type="password" placeholder="Password">
+                    </div>
+                    <a routerLink=""><strong>Forgot your Password?</strong></a>
+                    <button class="btn btn-form">Log in</button>
+                    <p>Need an account? <a routerLink="/user/register"> Register here</a></p>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+

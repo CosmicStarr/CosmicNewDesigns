@@ -1,0 +1,32 @@
+<section class="orderSum-container">
+    <div class="actual-order-container">
+        <div class="order-button">
+            <button>Place your Order</button>
+            <p class="privacy">by placing your order, you agree to SunStarr <a routerLink="" >privacy notice</a> and <a routerLink="">condition of use</a>.</p>
+        </div>
+        <h1>Order Summary</h1>
+        <div class="order-summary-info">
+            <div class="left-info">
+                <p>items:</p>
+                <p>Shipping & handling:</p>
+                <p>total before tax:</p>
+                <p>estimated tax:</p>
+      
+                <h3>Order Total:</h3>
+            </div>
+            <div class="right-info"*ngIf="(ShoppingCartTotal$|async) as Cart">
+                <ng-container *ngIf="(ShoppingCart$|async) as shopCart" >
+                    <p>{{shopCart.shoppingCartItems.length}}</p>
+                </ng-container>
+                <p>$0.00</p>
+                <p class="total-tax">{{Cart.subTotal|currency}}</p>
+                <p class="est-tax">{{Cart.tax |currency}}</p>
+           
+                <h3 class="total-order">{{Cart.total |currency}}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-container">
+
+    </div>
+</section>

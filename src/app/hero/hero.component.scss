@@ -1,0 +1,123 @@
+// font-sizes between 10px & 98px
+// but you must use rem!
+// example 62px is 6.2rem
+// yellows:
+// #a2b400
+// primary Colors:#e67e22
+// Tints:#fae5d3
+// Shades:
+// Accents:
+// Greys:
+// #555
+// #333
+
+ 
+// Shadows:
+
+// border Radius
+
+// White Space
+
+// System Space: 
+// even numbers between 2px and 128px! again use rem!
+//example : 96px is 9.6rem
+//because of the way you set up the "html" element, 
+//1rem is 10px 
+
+@media (max-width: 84em){
+    .hero-container{
+        max-width: 120rem;
+    }
+
+}
+.light-box{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0rem;
+    left:0rem;
+    background-color: #a2b40080;
+}
+
+.light-box-image{
+    display: block;
+    margin-top: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 33%;
+    
+    // width: 33%;
+    // height: 33%;
+}
+.section-hero{
+    background-color: #fae5d3;
+    padding: 3.4rem 0 9.6rem 0;
+    position: relative;
+}
+
+.hero-container{
+    margin: 0 auto;
+    padding: 0 3.2rem;
+    max-width: 130rem;
+    display: grid;
+    gap: 9.6rem;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+.hero-img{
+    width: 100%;
+    border-radius: 10px;
+}
+.primary-heading{
+    text-transform: uppercase;
+    color: #a2b400;
+    font-weight: 700;
+    line-height: 1.1;
+    font-size: 6.2rem;
+    margin-bottom: 3.2rem;
+}
+
+.margin-right{
+    margin-right: .5rem;
+}
+
+.hero-description{
+    color: #333;
+    font-size: 2rem;
+    line-height: 1.1;
+    font-weight: 600;
+    margin-bottom: 4.8rem;
+}
+
+
+// human Pics under buttons
+.human-Icons{
+    margin-top: 8rem;
+    align-items: center;
+    //gap between pics "p" tag
+    gap: 1.6rem;
+    display: flex;
+}
+.human-Pics{
+    display: flex;
+   
+}
+.human-Pics img{
+    height: 4.8rem;
+    width: 5.0rem;
+    border-radius: 50%;
+    margin-right: -1.6rem;
+    border: 3px solid #fae5d3;
+}
+.human-Pics img:last-child{
+    margin: 0;
+}
+.human-Text{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+}
+.human-Text span{
+    color: #733f11;
+    font-weight: 900;
+}

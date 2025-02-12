@@ -1,0 +1,59 @@
+.section-how{
+    padding: 9.6rem 0;
+}
+
+.step-description{
+    line-height: 1.2;
+    font-weight: 700;
+
+}
+.step-num{
+    font-size: 9.0rem;
+    font-weight: 900;
+    color: #ddd;
+    margin-bottom: 1rem;
+}
+.step-header{
+    margin-bottom: 1rem;
+    color: #a2b400;
+}
+
+
+.step-image-box{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-image-box::before,
+.step-image-box::after{
+    content: "";
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50% );
+}
+.step-image-box::before{
+    width: 60%;
+    padding-bottom: 60%;
+    background-color: #f2ff7ad0;
+    z-index: -2;
+}
+.step-image-box::after{
+    width: 50%;
+    padding-bottom: 50%;
+    background-color: #b5c333;
+    z-index: -1;
+}
+.step-image{
+    width: 40%;
+}
+.step-image-2{
+    width: 55%;
+}
+.step-image-3{
+    width: 55%;
+}

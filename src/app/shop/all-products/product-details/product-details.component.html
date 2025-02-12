@@ -1,0 +1,87 @@
+<app-header></app-header>
+<section class="product-details-container">
+    <div class="T-details container3">
+        <body>
+            <div class="wrapper">
+                <div class="card">
+                    <!-- left side of the card -->
+                    <div class="product-imgs">
+                        <div class="img-display">
+                            <div class="img-showcase">
+                                <!-- put four imgs here! -->
+                                <img src="{{products?.photosDTO || '../assets/Images/imgPlaceHolder612x612.jpg'}}" alt="{{products?.name}}"  class="img-fluid bg-info">
+                            </div>
+                        </div>
+                        <div class="img-select">
+                                    <!-- the same img data as above here! 
+                                    when a use clicks, the img will show above! -->
+                            <!-- <div class="img-item">
+                                <a >
+                                 <img src="" alt="">
+                                </a>
+                            </div>
+                            <div class="img-item">
+                                <a >
+                                 <img src="" alt="">
+                                </a>
+                            </div>
+                            <div class="img-item">
+                                <a >
+                                 <img src="" alt="">
+                                </a>
+                            </div>
+                            <div class="img-item">
+                                <a >
+                                 <img src="" alt="">
+                                </a>
+                            </div> -->
+                        </div> 
+                    </div>
+                    <!-- right side of the card -->
+                    <div class="product-content">
+                        <h2 class="product-title">{{products?.name}}</h2>
+                        <!-- <a class="product-link">add a link here optional</a> -->
+                        <div class="product-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <span>4.7(20)</span>
+                        </div>
+                        <div class="product-price">
+                            <p class="new-price">price:<span> {{products?.price|currency}}</span></p> 
+                        </div>
+                        <div class="product-details">
+                            <h3>Description:</h3>
+                            <p>{{products?.description}}</p>
+                            <ul>
+                                <li *ngIf="products?.isAvailable === true">Available:<span> Yes!</span></li>
+                                <li *ngIf="products?.isAvailable === false">Available:<span> Coming Soon!</span></li>
+                                <li>Category:<span> {{products?.categoryDTO}}</span></li>
+                            </ul>
+                        </div>
+                        <div class="purchase-info"> 
+                            <label>QTY:</label>        
+                            <div>
+                                <i (click)="increment()" class="fa fa-plus-circle"></i>
+                                <span> {{amount}} </span>
+                                <i (click)="decrement()" class="fa fa-minus-circle"></i>
+                            </div>
+                            <button (click)="addtoCart()" routerLink="/shoppingcart/cart" type="button" class="btn2">Add to Cart <i class="fa fa-shopping-cart"></i></button>
+                        </div>
+                         <div class="social-links">
+                             <p class="mt-3">Share At:</p>
+                             <a><i class="fa fa-facebook"></i></a>
+                             <a><i class="fa fa-instagram"></i></a>
+                             <a><i class="fa fa-twitter"></i></a>
+                             <a><i class="fa fa-whatsapp"></i></a>
+                             <a><i class="fa fa-pinterest"></i></a>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+    </div>
+</section>
+<app-footer></app-footer>

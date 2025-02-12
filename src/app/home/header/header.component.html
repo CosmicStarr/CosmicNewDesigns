@@ -1,0 +1,77 @@
+<header class="header" [ngClass]="{'nav-open': showMenu}">
+    <img class="logo" src="../assets/Images/thesun.jpg" alt="SunStarrsLogo">
+    <nav class="nav-bar">
+        <ul  class="nav-bar-list">
+            <li>
+                <a class="nav-bar-list-link" routerLinkActive="active"  routerLink=""></a>
+            </li>
+            <li>
+                <a class="nav-bar-list-link" routerLinkActive="active"  routerLink="/shop/about">About</a>
+            </li>
+            <li>
+                <a class="nav-bar-list-link shop-link" routerLinkActive="active" routerLink="/shop/products">Shop</a>
+            </li>
+            <ng-container>
+                <li>
+                    <a class="nav-bar-list-link" routerLinkActive="active"  routerLink="/user/register"></a>
+                </li>
+            </ng-container>
+            <ng-container>
+                <div class="dropdown-show">
+                    <a class="nav-bar-list-link"><i class="fa fa-user"></i></a>
+                    <ul class="dropdown">
+                        <li>
+                            <a class="nav-bar-list-link" routerLinkActive="active"  routerLink="/user/profile"> Account</a>
+                        </li>
+                        <li>
+                            <a class="nav-bar-list-link" routerLinkActive="active"  routerLink="/user/settings"> Settings</a>
+                        </li>
+                        <li>
+                            <a class="nav-bar-list-link" routerLinkActive="active"  routerLink=""> Log Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="(ShoppingCart$|async) as Cart">
+                <div class="dropdown-show2" *ngIf="(ShoppingCartTotal$|async) as Totals">
+                    <a>{{Cart.shoppingCartItems.length}}<i class="fa fa-shopping-cart"></i></a>
+                    <div class="dropdown2">
+                        <div class="top" *ngFor="let item of Cart.shoppingCartItems">
+                            <div class="left-top">
+                                <div class="img-container" role="img">
+                                    <img src="{{item.photoUrl}}" alt="{{item.itemName}}" class="actual-img">               
+                                </div>
+                            </div>
+                            <div class="right-top">
+                                <h3>{{item.itemName}}</h3>
+                                <p>{{item.category}} </p>
+                                <div class="QTYInfo">
+                                    <p>Qty:</p>
+                                    <p>{{item.amount}}</p>
+                                </div>
+                                <div class="fatrash">
+                                    <i (click)="removeItems(item)" class="fa fa-trash"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shopinfo">
+                            <p>Sub-Total</p>
+                            <p>{{Totals.subTotal|currency}}</p>
+                        </div>
+                        <div class="bottom">
+                           <button class="btnBag"><a routerLink="/shoppingcart/cart">View Bag</a></button> 
+                           <button class="btnBag"><a routerLink="">Checkout</a></button> 
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+            <li>
+                <a class="nav-bar-list-link" routerLink="/user/login">Login</a>
+            </li>
+        </ul>
+    </nav>
+    <button (click)="toggleMenu()" [ngClass]="{'nav-open': showMenu}" class="btn-moblie-nav">
+        <i *ngIf="!showMenu" class="fa fa-bars"></i>
+        <i *ngIf="showMenu" class="fa fa-close faClose"></i>
+    </button>
+</header>

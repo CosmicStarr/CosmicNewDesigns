@@ -1,0 +1,53 @@
+<app-header></app-header>
+<section class="user-profile-box container">
+    <div class="user-heading-container">
+        <h1 class="heading1">Your Orders</h1>
+        <div class="icon-position">
+            <input (keyup.enter)="onSearch()" #Search type="text" placeholder="search all orders" class="order-search" [(ngModel)]="term" name="term">
+            <ng-container *ngIf="Search.value">
+                <i (click)="onReset()" class="fa fa-times-circle x"></i>
+            </ng-container>
+            <ng-container *ngIf="!Search.value">
+                <i class="fa fa-search"></i>
+            </ng-container>
+            <button (click)="onSearch()" class="btn-search btn-forms"> Search</button>
+            <!-- <ul *ngIf="term" class="searchList">
+                <li *ngFor="let item of orderedItem | filter : term">
+                   <a (click)="onSearch()">
+                        {{item.productName}}
+                   </a>
+               </li>
+            </ul> -->
+        </div>  
+
+    </div>
+    <nav class="menu-select">
+        <ul class="menu-list">
+            <li class="menu-list-select">
+                <a (click)="toggleMenu2()" [routerLink]="['/user/profile/orders']"> Orders</a>
+            </li>
+            <li class="menu-list-select">
+                <a (click)="toggleMenu()" [routerLink]="['/user/profile/eatagain']"> Eat it again</a>
+            </li>
+        </ul>
+        <hr class="hr-line">
+    </nav>
+    <div class="order-select">
+       <label><span>{{order?.length}} orders</span> placed in</label> 
+        <select class="order-list-select" (change)="onSortSelected($event.target.value)">
+            <option *ngFor="let item of sortOptions" class="order-option" [value]="item.value">
+                {{item.name}}
+            </option>
+        </select>
+    </div>
+    <ng-container *ngIf="!order">
+        <h4 class="sorry">No orders placed within this time period</h4>
+    </ng-container>
+    <ng-container *ngIf="showMenu == 'true'">
+        <app-eatagain *ngFor="let item of order" [item]="order"></app-eatagain>
+    </ng-container>
+    <ng-container *ngIf="showMenu == 'false'">
+        <app-user-orders *ngFor="let item of order" [item]="item"></app-user-orders>
+    </ng-container>
+</section>
+<app-footer></app-footer>
